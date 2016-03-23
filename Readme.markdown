@@ -1,6 +1,17 @@
 # Django API with Django Rest Framework, AngularJS-Resource and SQLite
 
-This sample project is the companion of a [blog post](http://kevinastone.github.io/getting-started-with-django-rest-framework-and-angularjs.html) on how to get started with Django Rest Framework and AngularJS.
+This sample project is an update to the sample project in 
+https://github.com/kevinastone/django-api-rest-and-angular.
+
+The updates are as follows:
+
+1. Requirements include extra facilities that are necessary for using ipython.
+2. Django api (example/api/api.py and example/api/api.py) are updated to correct some errors for editing functionalities.
+    1. NewPostSerializer is added to differentiate between serializer required for showing posts and saving posts.
+    2. Consequently, PostList class is amended to have a get_serializer_class method which chooses a serializer depended on request.method. If it is 'POST', then we choose NewPostSerializer, otherwise PostSerializer is default one.
+    3. PostPhotoList view's get_queryset method is corrected to avoid the following AssertionError: 'PostPhotoList' should either include a `queryset` attribute, or override the `get_queryset()` method.
+
+  
 
 ## Dependencies
 
